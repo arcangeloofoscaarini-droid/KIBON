@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parceiro Kibon | Download & Cadastro</title>
+    <style>
+        /* Estilização Geral */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        header {
+            background-color: #e2001a; /* Vermelho Kibon */
+            color: white;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        h2 {
+            color: #e2001a;
+            border-bottom: 2px solid #e2001a;
+            padding-bottom: 10px;
+        }
+
+        /* Seção de Download */
+        .download-box {
+            text-align: center;
+            padding: 30px;
+            background-color: #fff5f5;
+            border: 2px dashed #e2001a;
+            border-radius: 10px;
+            margin-bottom: 30px;
+        }
+
+        .btn-download {
+            display: inline-block;
+            background-color: #e2001a;
+            color: white;
+            padding: 15px 30px;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 50px;
+            transition: transform 0.2s, background-color 0.2s;
+        }
+
+        .btn-download:hover {
+            background-color: #b30015;
+            transform: scale(1.05);
+        }
+
+        /* Formulário de Cadastro */
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        label {
+            margin-top: 15px;
+            font-weight: bold;
+        }
+
+        input {
+            padding: 12px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        button[type="submit"] {
+            margin-top: 25px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            padding: 15px;
+            font-size: 18px;
+            font-weight: bold;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #218838;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            font-size: 12px;
+            color: #777;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Portal do Parceiro</h1>
+    <p>Bem-vindo! Baixe nosso app e faça seu cadastro abaixo.</p>
+</header>
+
+<div class="container">
+    
+    <!-- Seção de Download do APK -->
+    <section class="download-box">
+        <h2>Baixe nosso Aplicativo</h2>
+        <p>Tenha todas as ferramentas na palma da sua mão. Clique no botão abaixo para baixar o arquivo APK oficial.</p>
+        <!-- Substitua o '#' pelo link direto do seu arquivo APK -->
+        <a href="seu-arquivo.apk" class="btn-download">📥 BAIXAR APK AGORA</a>
+        <p style="font-size: 0.8em; margin-top: 10px;">*Certifique-se de permitir a instalação de fontes desconhecidas no Android.</p>
+    </section>
+
+    <!-- Seção de Cadastro -->
+    <section>
+        <h2>Formulário de Cadastro</h2>
+        <form action="#" method="POST">
+            <label for="nome">Nome Completo:</label>
+            <input type="text" id="nome" name="nome" placeholder="Digite seu nome" required>
+
+            <label for="email">E-mail:</label>
+            <input type="email" id="email" name="email" placeholder="seuemail@exemplo.com" required>
+
+            <label for="whatsapp">WhatsApp / Telefone:</label>
+            <input type="tel" id="whatsapp" name="whatsapp" placeholder="(00) 00000-0000" required>
+
+            <label for="cidade">Cidade/Estado:</label>
+            <input type="text" id="cidade" name="cidade" placeholder="Ex: São Paulo - SP" required>
+
+            <button type="submit">FINALIZAR CADASTRO</button>
+        </form>
+    </section>
+
+</div>
+
+<footer>
+    &copy; 2026 Portal do Parceiro - Todos os direitos reservados.
+</footer>
+
+</body>
+</html>
