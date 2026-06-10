@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     
     <style>
-        /* --- ESTILO VISUAL DO SITE (CSS) --- */
+        /* --- ESTILO VISUAL (CSS) --- */
         * {
             margin: 0;
             padding: 0;
@@ -56,13 +56,11 @@
             color: #ff3333;
         }
 
-        /* Banner Principal */
+        /* Banner Principal com foto real do seu Pátio de Motos */
         .hero {
-            background: linear-gradient(rgba(13, 14, 18, 0.8), rgba(13, 14, 18, 1)), 
-                        url('substitua_por_foto_grupo.jpeg') no-repeat center center/cover;
-            /* Caso prefira sem imagem de fundo no banner, ele mantém o fundo escuro sólido */
-            background-color: #14161d;
-            height: 45vh;
+            background: linear-gradient(rgba(13, 14, 18, 0.85), rgba(13, 14, 18, 1)), 
+                        url('https://i.postimg.cc/tJnB8z89/Whats-App-Image-2026-06-08-at-13-03-49-2.jpg') no-repeat center center/cover;
+            height: 50vh;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -75,6 +73,7 @@
             margin-bottom: 15px;
             text-transform: uppercase;
             letter-spacing: 1px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
         }
 
         .hero-content p {
@@ -145,7 +144,7 @@
 
         .imagem-container {
             width: 100%;
-            height: 280px;
+            height: 340px; /* Ajustado para mostrar melhor o formato em pé das fotos */
             overflow: hidden;
             background-color: #1a1d26;
         }
@@ -175,13 +174,14 @@
 
         .tag-modelo {
             display: inline-block;
-            background-color: #222530;
-            color: #a0a5b5;
+            background-color: #ff3333;
+            color: #ffffff;
             font-size: 11px;
             padding: 3px 8px;
             border-radius: 3px;
             margin-bottom: 12px;
             font-weight: 600;
+            text-transform: uppercase;
         }
 
         .descricao {
@@ -205,9 +205,9 @@
         }
 
         .preco {
-            font-size: 24px;
+            font-size: 26px;
             font-weight: bold;
-            color: #00ff88; /* Verde para destacar o preço ótimo */
+            color: #00ff88;
         }
 
         /* Botão Whatsapp */
@@ -252,29 +252,69 @@
         <div class="logo">ZYON & MAX <span>MOTOS</span></div>
         <nav>
             <a href="#catalogo">Catálogo</a>
-            <a href="https://wa.me/555499422678" target="_blank">Suporte</a>
         </nav>
     </header>
 
     <section class="hero">
         <div class="hero-content">
-            <h2>Mobilidade Inteligente</h2>
-            <p>Escolha liberdade, economia e estilo para o seu dia a dia.</p>
-            <a href="#catalogo" class="btn-principal">Ver Modelos</a>
+            <h2>Motos Elétricas Zyon & Max</h2>
+            <p>O estoque mais completo com o melhor preço do Brasil.</p>
+            <a href="#catalogo" class="btn-principal">Ver Catálogo</a>
         </div>
     </section>
 
     <section id="catalogo" class="catalogo-section">
-        <h2>Modelos em Destaque</h2>
-        <p class="subtitulo">Qualidade garantida e o melhor preço do mercado</p>
+        <h2>Modelos Disponíveis</h2>
+        <p class="subtitulo">Clique no modelo desejado para falar conosco via WhatsApp</p>
 
         <div class="grid-produtos">
             
             <div class="card-produto">
                 <div class="imagem-container">
-                    <img src="zyon_vermelha.jpeg" alt="Moto Elétrica Zyon Vermelha">
+                    <img src="https://i.postimg.cc/qR9Bdfp9/Whats-App-Image-2026-06-08-at-13-03-50.jpg" alt="Max Vermelha">
                 </div>
                 <div class="info-produto">
-                    <h3>Zyon E-Scooter</h3>
+                    <h3>Max Sport</h3>
                     <span class="tag-modelo">Cor: Vermelha</span>
-                    <p class="descricao">Modelo super prático com cesto frontal de fábrica, enc
+                    <p class="descricao">Visual esportivo com adesivos Max exclusivos, painel digital, cesto de metal dianteiro e amortecimento duplo de alta qualidade.</p>
+                    <div class="preco-box">
+                        <div class="preco-de">De R$ 3.999,00</div>
+                        <div class="preco">R$ 2.999,99</div>
+                    </div>
+                    <a href="https://wa.me/5511999999999?text=Olá!+Quero+comprar+a+moto+Max+Vermelha+por+R$2.999,99" target="_blank" class="btn-whats">
+                        <i class="fab fa-whatsapp"></i> Chamar no WhatsApp
+                    </a>
+                </div>
+            </div>
+
+            <div class="card-produto">
+                <div class="imagem-container">
+                    <img src="https://i.postimg.cc/G3x7zWPh/Whats-App-Image-2026-06-08-at-13-03-50-1.jpg" alt="Max Azul">
+                </div>
+                <div class="info-produto">
+                    <h3>Max Sport</h3>
+                    <span class="tag-modelo">Cor: Azul Elétrico</span>
+                    <p class="descricao">Pintura metálica brilhante diferenciada. Inclui carregador inteligente bivolt, retrovisores e encosto traseiro completo.</p>
+                    <div class="preco-box">
+                        <div class="preco-de">De R$ 3.999,00</div>
+                        <div class="preco">R$ 2.999,99</div>
+                    </div>
+                    <a href="https://wa.me/5511999999999?text=Olá!+Quero+comprar+a+moto+Max+Azul+por+R$2.999,99" target="_blank" class="btn-whats">
+                        <i class="fab fa-whatsapp"></i> Chamar no WhatsApp
+                    </a>
+                </div>
+            </div>
+
+            <div class="card-produto">
+                <div class="imagem-container">
+                    <img src="https://i.postimg.cc/HLSfPZhm/Whats-App-Image-2026-06-08-at-13-03-51.jpg" alt="Max Bege">
+                </div>
+                <div class="info-produto">
+                    <h3>Max Sport</h3>
+                    <span class="tag-modelo">Cor: Bege Premium</span>
+                    <p class="descricao">A cor mais procurada do momento, com acabamento refinado e excelente estabilidade para trajetos urbanos.</p>
+                    <div class="preco-box">
+                        <div class="preco-de">De R$ 3.999,00</div>
+                        <div class="preco">R$ 2.999,99</div>
+                    </div>
+                    <a href="https://wa.me/5511999999999?text=Olá!+Quero+comprar+a+moto+Max+Bege+por+R$2.999,99" target
