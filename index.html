@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Zyon & Max - Motos Elétricas</title>
+    <title>Zyon & Max Motos Elétricas - Catálogo Oficial</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     
     <style>
-        /* --- ESTILO VISUAL DA PÁGINA (CSS) --- */
+        /* --- CONFIGURAÇÕES GERAIS --- */
         * {
             margin: 0;
             padding: 0;
@@ -21,21 +21,33 @@
             color: #ffffff;
         }
 
+        /* Alerta de Segurança Superior */
+        .alerta-seguranca {
+            background-color: #ff3333;
+            color: #ffffff;
+            text-align: center;
+            padding: 8px 20px;
+            font-size: 13px;
+            font-weight: bold;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+        }
+
         /* Menu Superior */
         header {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 15px 8%;
+            padding: 20px 8%;
             background-color: #14161d;
             position: sticky;
             top: 0;
             z-index: 1000;
-            border-bottom: 2px solid #ff3333;
+            border-bottom: 1px solid #222530;
         }
 
         .logo {
-            font-size: 24px;
+            font-size: 22px;
             font-weight: bold;
             letter-spacing: 1px;
         }
@@ -45,32 +57,29 @@
         }
 
         nav a {
-            color: #ffffff;
+            color: #a0a5b5;
             text-decoration: none;
-            margin-left: 20px;
+            margin-left: 25px;
             font-weight: 500;
+            font-size: 14px;
             transition: color 0.3s;
         }
 
         nav a:hover {
-            color: #ff3333;
+            color: #ffffff;
         }
 
         /* Banner Principal */
         .hero {
             background-color: #14161d;
-            height: 30vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
+            padding: 60px 20px;
             text-align: center;
-            padding: 0 20px;
             border-bottom: 1px solid #222530;
         }
 
         .hero-content h2 {
-            font-size: 36px;
-            margin-bottom: 10px;
+            font-size: 38px;
+            margin-bottom: 12px;
             text-transform: uppercase;
             letter-spacing: 1px;
         }
@@ -78,132 +87,135 @@
         .hero-content p {
             font-size: 16px;
             color: #a0a5b5;
-            margin-bottom: 20px;
+            max-width: 600px;
+            margin: 0 auto 25px auto;
+            line-height: 1.5;
         }
 
-        .btn-principal {
-            background-color: #ff3333;
-            color: #ffffff;
-            padding: 10px 25px;
-            text-decoration: none;
-            font-weight: bold;
-            border-radius: 5px;
-            transition: transform 0.2s, background-color 0.3s;
-            display: inline-block;
+        /* Bloco de Confiança */
+        .selo-entrega {
+            display: inline-flex;
+            align-items: center;
+            background-color: rgba(0, 255, 136, 0.1);
+            border: 1px solid #00ff88;
+            color: #00ff88;
+            padding: 10px 20px;
+            border-radius: 4px;
+            font-weight: 600;
+            font-size: 14px;
             text-transform: uppercase;
-            font-size: 13px;
         }
 
-        .btn-principal:hover {
-            background-color: #cc0000;
-            transform: scale(1.05);
+        .selo-entrega i {
+            margin-right: 10px;
+            font-size: 16px;
         }
 
-        /* Seção do Catálogo */
-        .catalogo-section {
-            padding: 50px 8%;
+        /* Seções Gerais */
+        .secao-container {
+            padding: 60px 8%;
             text-align: center;
         }
 
-        .catalogo-section h2 {
-            font-size: 30px;
+        .secao-container h2 {
+            font-size: 28px;
             margin-bottom: 10px;
             text-transform: uppercase;
+            letter-spacing: 0.5px;
         }
 
         .subtitulo {
             color: #a0a5b5;
             margin-bottom: 40px;
+            font-size: 15px;
         }
 
-        /* Grade de Produtos (Ajustada para exibição de texto) */
+        /* Grade do Catálogo */
         .grid-produtos {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
             gap: 25px;
         }
 
-        /* Cards em formato de ficha técnica */
         .card-produto {
             background-color: #14161d;
-            border-radius: 8px;
-            padding: 25px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
-            transition: transform 0.3s, border 0.3s;
+            border-radius: 6px;
+            padding: 30px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
             border: 1px solid #222530;
             text-align: left;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
+            transition: border-color 0.3s;
         }
 
         .card-produto:hover {
-            transform: translateY(-3px);
-            border: 1px solid #ff3333;
+            border-color: #ff3333;
         }
 
         .info-produto h3 {
-            font-size: 22px;
-            margin-bottom: 8px;
+            font-size: 20px;
             color: #ffffff;
             text-transform: uppercase;
-            border-bottom: 1px solid #222530;
-            padding-bottom: 8px;
+            margin-bottom: 6px;
         }
 
         .tag-modelo {
             display: inline-block;
-            background-color: #ff3333;
-            color: #ffffff;
+            background-color: #222530;
+            color: #a0a5b5;
             font-size: 11px;
-            padding: 3px 8px;
+            padding: 4px 8px;
             border-radius: 3px;
-            margin-bottom: 12px;
+            margin-bottom: 15px;
             font-weight: 600;
             text-transform: uppercase;
+            border: 1px solid #333745;
         }
 
         .descricao {
             color: #a0a5b5;
             font-size: 14px;
             line-height: 1.6;
-            margin-bottom: 20px;
+            margin-bottom: 25px;
         }
 
         .preco-box {
             margin-bottom: 20px;
             background-color: #0d0e12;
-            padding: 10px;
-            border-radius: 5px;
-            border-left: 3px solid #00ff88;
+            padding: 15px;
+            border-radius: 4px;
+            border-left: 4px solid #00ff88;
         }
 
         .preco-de {
             font-size: 12px;
             color: #656a7b;
             text-decoration: line-through;
-            margin-bottom: 2px;
+            margin-bottom: 4px;
         }
 
         .preco {
-            font-size: 28px;
+            font-size: 26px;
             font-weight: bold;
             color: #00ff88;
         }
 
-        /* Botão Whatsapp */
+        /* Botões */
         .btn-whats {
             display: block;
             background-color: #25d366;
             color: #ffffff;
             text-align: center;
-            padding: 12px;
+            padding: 14px;
             text-decoration: none;
             font-weight: bold;
-            border-radius: 5px;
-            transition: background-color 0.3s;
-            font-size: 14px;
+            border-radius: 4px;
+            transition: background-color 0.2s;
+            font-size: 13px;
             text-transform: uppercase;
+            letter-spacing: 0.5px;
         }
 
         .btn-whats:hover {
@@ -212,94 +224,211 @@
 
         .btn-whats i {
             margin-right: 8px;
-            font-size: 16px;
+            font-size: 15px;
+        }
+
+        /* Seção Suporte e Termos de Compra */
+        .bg-alternativo {
+            background-color: #14161d;
+            border-top: 1px solid #222530;
+            border-bottom: 1px solid #222530;
+        }
+
+        .grid-suporte {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            text-align: left;
+            margin-top: 20px;
+        }
+
+        .bloco-suporte {
+            background-color: #0d0e12;
+            padding: 25px;
+            border-radius: 6px;
+            border: 1px solid #222530;
+        }
+
+        .bloco-suporte i {
+            font-size: 24px;
+            color: #ff3333;
+            margin-bottom: 15px;
+        }
+
+        .bloco-suporte h4 {
+            font-size: 18px;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+        }
+
+        .bloco-suporte p {
+            color: #a0a5b5;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+
+        /* Links de suporte ativos */
+        .link-suporte {
+            display: inline-block;
+            margin-top: 15px;
+            color: #00ff88;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 14px;
+        }
+        .link-suporte:hover {
+            text-decoration: underline;
         }
 
         /* Rodapé */
         footer {
-            background-color: #14161d;
-            padding: 30px 20px;
+            background-color: #0d0e12;
+            padding: 40px 20px;
             text-align: center;
             color: #656a7b;
             font-size: 13px;
-            border-top: 1px solid #222530;
-            margin-top: 60px;
+            border-top: 1px solid #14161d;
+        }
+
+        footer p {
+            margin-bottom: 10px;
         }
     </style>
 </head>
 <body>
 
+    <!-- Alerta de Segurança Contra Golpes -->
+    <div class="alerta-seguranca">
+        <i class="fas fa-shield-alt"></i> Compra Segura: Pagamento realizado exclusivamente no ato da entrega do veículo!
+    </div>
+
     <header>
         <div class="logo">ZYON & MAX <span>MOTOS</span></div>
         <nav>
             <a href="#catalogo">Catálogo</a>
+            <a href="#garantia">Segurança e Garantia</a>
+            <a href="#suporte">Suporte Oficial</a>
         </nav>
     </header>
 
     <section class="hero">
         <div class="hero-content">
-            <h2>Motos Elétricas de Alta Qualidade</h2>
-            <p>Consulte a disponibilidade de cores e modelos com a nossa equipe.</p>
-            <a href="#catalogo" class="btn-principal">Ver Modelos</a>
+            <h2>Catálogo Oficial de Fábrica</h2>
+            <p>Escolha mobilidade inteligente com custo zero de combustível e manutenção simplificada. Atendimento direto e transparente.</p>
+            <div class="selo-entrega">
+                <i class="fas fa-handshake"></i> Pagamento Somente na Entrega
+            </div>
         </div>
     </section>
 
-    <section id="catalogo" class="catalogo-section">
-        <h2>Tabela de Modelos</h2>
-        <p class="subtitulo">Selecione o modelo desejado para consultar o estoque via WhatsApp</p>
+    <!-- Seção do Catálogo Textual -->
+    <section id="catalogo" class="secao-container">
+        <h2>Modelos Disponíveis</h2>
+        <p class="subtitulo">Selecione o modelo desejado abaixo para consultar a disponibilidade imediata no estoque</p>
 
         <div class="grid-produtos" id="lista-de-motos"></div>
     </section>
 
+    <!-- Seção de Garantia e Políticas de Pagamento -->
+    <section id="garantia" class="secao-container bg-alternativo">
+        <h2>Compromisso e Transparência</h2>
+        <p class="subtitulo">Entenda nossa política de comercialização feita para proteger o consumidor</p>
+
+        <div class="grid-suporte">
+            <div class="bloco-suporte">
+                <i class="fas fa-truck"></i>
+                <h4>Entrega Garantida</h4>
+                <p>Levamos o veículo até o seu endereço com total comodidade. Você avalia o produto presencialmente antes de realizar qualquer transação.</p>
+            </div>
+            <div class="bloco-suporte">
+                <i class="fas fa-wallet"></i>
+                <h4>Zero Adiantamento</h4>
+                <p>Nossa empresa <strong>NÃO</strong> solicita valores de sinal, taxas de reserva ou PIX antecipados. O pagamento é feito apenas quando a moto estiver com você.</p>
+            </div>
+            <div class="bloco-suporte">
+                <i class="fas fa-credit-card"></i>
+                <h4>Meios de Pagamento</h4>
+                <p>Aceitamos pagamento via PIX ou Cartões de Crédito diretamente na maquininha com o nosso entregador no momento do recebimento.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção de Suporte Técnico e Atendimento -->
+    <section id="suporte" class="secao-container">
+        <h2>Central de Atendimento</h2>
+        <p class="subtitulo">Fale diretamente com os nossos departamentos especializados para tirar dúvidas</p>
+
+        <div class="grid-suporte">
+            <div class="bloco-suporte">
+                <i class="fas fa-comments"></i>
+                <h4>Pré-Venda e Estoque</h4>
+                <p>Dúvidas sobre autonomia, especificações dos motores, cores disponíveis em pátio e agendamento de entregas.</p>
+                <a href="#" id="suporte-vendas" target="_blank" class="link-suporte">Iniciar Chat de Vendas &rarr;</a>
+            </div>
+            <div class="bloco-suporte">
+                <i class="fas fa-tools"></i>
+                <h4>Suporte Pós-Venda</h4>
+                <p>Informações sobre assistência técnica, orientações de primeiro carregamento e termos de garantia estrutural da bateria.</p>
+                <a href="#" id="suporte-tecnico" target="_blank" class="link-suporte">Falar com Assistência &rarr;</a>
+            </div>
+        </div>
+    </section>
+
     <footer>
-        &copy; 2026 Zyon & Max Motos - Todos os direitos reservados.
+        <p>&copy; 2026 Zyon & Max Motos Elétricas - Catálogo Corporativo.</p>
+        <p style="font-size: 11px; color: #444957;">Nota: Este site é um catálogo informativo. Vendas e contratos são validados presencialmente no ato da entrega técnica.</p>
     </footer>
 
     <script>
-        // Altere o número abaixo para o seu WhatsApp (com DDD, somente números)
+        // --- CONFIGURAÇÃO DO WHATSAPP CORPORATIVO ---
+        // Altere o número abaixo para o seu WhatsApp comercial (coloque DDD e número juntos)
         const SEU_WHATSAPP = "5511999999999"; 
 
-        // Lista de produtos simplificada apenas com texto e especificações elétricas reais
+        // Configura automaticamente os links da seção de suporte
+        document.getElementById("suporte-vendas").href = `https://wa.me/${SEU_WHATSAPP}?text=${encodeURIComponent('Olá! Gostaria de tirar dúvidas sobre o estoque e agendamento de entregas das motos elétricas.')}`;
+        document.getElementById("suporte-tecnico").href = `https://wa.me/${SEU_WHATSAPP}?text=${encodeURIComponent('Olá! Preciso de atendimento técnico ou pós-venda relacionado às motos elétricas.')}`;
+
+        // Dados estruturados dos modelos elétricos
         const motos = [
             {
                 nome: "Zyon Vermelha",
                 categoria: "Moto Elétrica",
-                descricao: "Propulsão 100% elétrica por motor Hub traseiro de alta eficiência. Zero emissões, bateria de lítio recarregável e painel digital de instrumentos.",
+                descricao: "Propulsão 100% elétrica por motor Hub traseiro de alta eficiência. Zero emissões de ruído, bateria de lítio recarregável e painel digital de instrumentos em LED.",
                 precoDe: "R$ 4.500,00",
                 precoPor: "R$ 2.999,00"
             },
             {
                 nome: "Zyon Verde Limão",
                 categoria: "Moto Elétrica",
-                descricao: "Alimentação limpa por energia elétrica com sistema de gerenciamento de bateria inteligente, iluminação Full LED integrada e aceleração silenciosa.",
+                descricao: "Alimentação limpa por energia elétrica com sistema de gerenciamento de célula inteligente (BMS), iluminação Full LED integrada e aceleração linear e silenciosa.",
                 precoDe: "R$ 4.500,00",
                 precoPor: "R$ 2.999,00"
             },
             {
                 nome: "Max Vermelha",
                 categoria: "Scooter Elétrica",
-                descricao: "Conceito de mobilidade urbana inteligente. Equipada com freios eletrônicos regenerativos, compartimento de carga sob o assento e assoalho plano.",
+                descricao: "Conceito de mobilidade inteligente para trajetos diários. Equipada com freios eletrônicos regenerativos E-ABS, compartimento de carga sob o assento e assoalho plano.",
                 precoDe: "R$ 3.990,00",
                 precoPor: "R$ 2.999,00"
             },
             {
                 nome: "Max Azul",
                 categoria: "Scooter Elétrica",
-                descricao: "Linha urbana sustentável com motorização por indução magnética embutida no cubo. Livre de correntes, óleos ou necessidade de manutenção complexa.",
+                descricao: "Linha urbana sustentável com motorização por indução magnética embutida no cubo da roda. Livre de correntes, correias, óleos ou necessidade de manutenções complexas.",
                 precoDe: "R$ 3.990,00",
                 precoPor: "R$ 2.999,00"
             },
             {
                 nome: "Max Bege",
                 categoria: "Scooter Elétrica",
-                descricao: "Conforto e eficiência energética. Conta com bateria removível projetada para carregamento prático direto em qualquer tomada doméstica padrão (110v/220v).",
+                descricao: "Conforto focado em eficiência energética. Conta com bateria de lítio removível projetada para carregamento prático em qualquer tomada doméstica padrão (110v/220v).",
                 precoDe: "R$ 3.990,00",
                 precoPor: "R$ 2.999,00"
             },
             {
                 nome: "Max Cinza Grafite",
                 categoria: "Scooter Elétrica",
-                descricao: "Chassi reforçado otimizado para autonomia em perímetros urbanos. Amortecimento duplo ajustável e tecnologia de controle de torque elétrico.",
+                descricao: "Chassi estrutural reforçado otimizado para autonomia em perímetros urbanos. Amortecimento duplo traseiro ajustável e tecnologia integrada de controle de torque elétrico.",
                 precoDe: "R$ 3.990,00",
                 precoPor: "R$ 2.999,00"
             }
@@ -310,7 +439,7 @@
             container.innerHTML = ""; 
 
             motos.forEach(moto => {
-                const textoMensagem = encodeURIComponent(`Olá! Gostaria de consultar a disponibilidade no estoque do modelo: ${moto.nome} que está no valor promocional de ${moto.precoPor}.`);
+                const textoMensagem = encodeURIComponent(`Olá! Gostaria de consultar a disponibilidade no estoque da ${moto.nome} no valor promocional de ${moto.precoPor}. Ciente de que o pagamento é feito apenas na entrega.`);
                 const linkWhats = `https://wa.me/${SEU_WHATSAPP}?text=${textoMensagem}`;
 
                 const cardHTML = `
@@ -324,7 +453,7 @@
                                 <p class="preco">Por: ${moto.precoPor}</p>
                             </div>
                             <a href="${linkWhats}" target="_blank" class="btn-whats">
-                                <i class="fab fa-whatsapp"></i> Consultar Estoque
+                                <i class="fab fa-whatsapp"></i> Consultar Disponibilidade
                             </a>
                         </div>
                     </div>
