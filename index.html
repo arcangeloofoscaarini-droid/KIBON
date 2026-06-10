@@ -3,8 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>E-Volt Motos Elétricas</title>
-    <!-- Ícones para o botão do WhatsApp -->
+    <title>Zyon & Max - Motos Elétricas</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     
     <style>
@@ -18,7 +17,7 @@
         }
 
         body {
-            background-color: #121214;
+            background-color: #0d0e12;
             color: #ffffff;
         }
 
@@ -27,12 +26,12 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 20px 8%;
-            background-color: #1a1a1e;
+            padding: 15px 8%;
+            background-color: #14161d;
             position: sticky;
             top: 0;
             z-index: 1000;
-            border-bottom: 2px solid #00ff88;
+            border-bottom: 2px solid #ff3333;
         }
 
         .logo {
@@ -42,7 +41,7 @@
         }
 
         .logo span {
-            color: #00ff88;
+            color: #ff3333;
         }
 
         nav a {
@@ -54,14 +53,16 @@
         }
 
         nav a:hover {
-            color: #00ff88;
+            color: #ff3333;
         }
 
         /* Banner Principal */
         .hero {
-            background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(18, 18, 20, 1)), 
-                        url('https://images.unsplash.com/photo-1558981806-ec527fa84c39?q=80&w=1200') no-repeat center center/cover;
-            height: 60vh;
+            background: linear-gradient(rgba(13, 14, 18, 0.8), rgba(13, 14, 18, 1)), 
+                        url('substitua_por_foto_grupo.jpeg') no-repeat center center/cover;
+            /* Caso prefira sem imagem de fundo no banner, ele mantém o fundo escuro sólido */
+            background-color: #14161d;
+            height: 45vh;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -70,30 +71,33 @@
         }
 
         .hero-content h2 {
-            font-size: 45px;
+            font-size: 40px;
             margin-bottom: 15px;
             text-transform: uppercase;
+            letter-spacing: 1px;
         }
 
         .hero-content p {
             font-size: 18px;
-            color: #a8a8b3;
-            margin-bottom: 30px;
+            color: #a0a5b5;
+            margin-bottom: 25px;
         }
 
         .btn-principal {
-            background-color: #00ff88;
-            color: #121214;
+            background-color: #ff3333;
+            color: #ffffff;
             padding: 12px 30px;
             text-decoration: none;
             font-weight: bold;
             border-radius: 5px;
             transition: transform 0.2s, background-color 0.3s;
             display: inline-block;
+            text-transform: uppercase;
+            font-size: 14px;
         }
 
         .btn-principal:hover {
-            background-color: #00cc6a;
+            background-color: #cc0000;
             transform: scale(1.05);
         }
 
@@ -104,30 +108,31 @@
         }
 
         .catalogo-section h2 {
-            font-size: 36px;
+            font-size: 32px;
             margin-bottom: 10px;
+            text-transform: uppercase;
         }
 
         .subtitulo {
-            color: #a8a8b3;
+            color: #a0a5b5;
             margin-bottom: 40px;
         }
 
         /* Grade de Produtos */
         .grid-produtos {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 30px;
         }
 
         /* Cards das Motos */
         .card-produto {
-            background-color: #1a1a1e;
-            border-radius: 10px;
+            background-color: #14161d;
+            border-radius: 8px;
             overflow: hidden;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
             transition: transform 0.3s, border 0.3s;
-            border: 1px solid transparent;
+            border: 1px solid #222530;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
@@ -135,14 +140,14 @@
 
         .card-produto:hover {
             transform: translateY(-5px);
-            border: 1px solid #00ff88;
+            border: 1px solid #ff3333;
         }
 
         .imagem-container {
             width: 100%;
-            height: 240px;
+            height: 280px;
             overflow: hidden;
-            background-color: #222;
+            background-color: #1a1d26;
         }
 
         .imagem-container img {
@@ -153,34 +158,56 @@
         }
 
         .card-produto:hover .imagem-container img {
-            transform: scale(1.1);
+            transform: scale(1.08);
         }
 
         .info-produto {
-            padding: 25px;
+            padding: 20px;
             text-align: left;
         }
 
         .info-produto h3 {
-            font-size: 22px;
-            margin-bottom: 10px;
+            font-size: 20px;
+            margin-bottom: 8px;
             color: #ffffff;
+            text-transform: uppercase;
+        }
+
+        .tag-modelo {
+            display: inline-block;
+            background-color: #222530;
+            color: #a0a5b5;
+            font-size: 11px;
+            padding: 3px 8px;
+            border-radius: 3px;
+            margin-bottom: 12px;
+            font-weight: 600;
         }
 
         .descricao {
-            color: #a8a8b3;
-            font-size: 14px;
-            line-height: 1.6;
+            color: #a0a5b5;
+            font-size: 13px;
+            line-height: 1.5;
             margin-bottom: 20px;
-            height: 70px;
+            height: 60px;
             overflow: hidden;
+        }
+
+        .preco-box {
+            margin-bottom: 15px;
+        }
+
+        .preco-de {
+            font-size: 12px;
+            color: #656a7b;
+            text-decoration: line-through;
+            margin-bottom: 2px;
         }
 
         .preco {
             font-size: 24px;
             font-weight: bold;
-            color: #00ff88;
-            margin-bottom: 20px;
+            color: #00ff88; /* Verde para destacar o preço ótimo */
         }
 
         /* Botão Whatsapp */
@@ -194,6 +221,8 @@
             font-weight: bold;
             border-radius: 5px;
             transition: background-color 0.3s;
+            font-size: 14px;
+            text-transform: uppercase;
         }
 
         .btn-whats:hover {
@@ -202,104 +231,50 @@
 
         .btn-whats i {
             margin-right: 8px;
+            font-size: 16px;
         }
 
         /* Rodapé */
         footer {
-            background-color: #1a1a1e;
-            padding: 40px 20px;
+            background-color: #14161d;
+            padding: 30px 20px;
             text-align: center;
-            color: #a8a8b3;
-            font-size: 14px;
-            border-top: 1px solid #29292e;
-            margin-top: 40px;
+            color: #656a7b;
+            font-size: 13px;
+            border-top: 1px solid #222530;
+            margin-top: 60px;
         }
     </style>
 </head>
 <body>
 
-    <!-- CABEÇALHO -->
     <header>
-        <div class="logo">E-VOLT <span>MOTOS</span></div>
+        <div class="logo">ZYON & MAX <span>MOTOS</span></div>
         <nav>
-            <a href="#home">Início</a>
             <a href="#catalogo">Catálogo</a>
-            <a href="#contato">Contato</a>
+            <a href="https://wa.me/555499422678" target="_blank">Suporte</a>
         </nav>
     </header>
 
-    <!-- BANNER PRINCIPAL -->
-    <section id="home" class="hero">
+    <section class="hero">
         <div class="hero-content">
-            <h2>O Futuro em Duas Rodas</h2>
-            <p>Motos elétricas de alta performance, economia e zero emissão de carbono.</p>
-            <a href="#catalogo" class="btn-principal">Conhecer Catálogo</a>
+            <h2>Mobilidade Inteligente</h2>
+            <p>Escolha liberdade, economia e estilo para o seu dia a dia.</p>
+            <a href="#catalogo" class="btn-principal">Ver Modelos</a>
         </div>
     </section>
 
-    <!-- CATÁLOGO DE MOTOS -->
     <section id="catalogo" class="catalogo-section">
-        <h2>Modelos Disponíveis</h2>
-        <p class="subtitulo">Clique no botão para consultar disponibilidade e frete via WhatsApp</p>
+        <h2>Modelos em Destaque</h2>
+        <p class="subtitulo">Qualidade garantida e o melhor preço do mercado</p>
 
         <div class="grid-produtos">
             
-            <!-- MOTO 1: SPORT -->
             <div class="card-produto">
                 <div class="imagem-container">
-                    <!-- Imagem Ilustrativa de Moto Esportiva Elétrica -->
-                    <img src="https://images.unsplash.com/photo-1614162692292-7ac56d7f7f1e?q=80&w=600" alt="Moto Elétrica Volt Sport">
+                    <img src="zyon_vermelha.jpeg" alt="Moto Elétrica Zyon Vermelha">
                 </div>
                 <div class="info-produto">
-                    <h3>Volt Hyper Sport</h3>
-                    <p class="descricao">Visual agressivo e alta performance. Autonomia de até 120km e carregamento rápido em 4 horas.</p>
-                    <div class="preco">R$ 19.900,00</div>
-                    <a href="https://wa.me/5511999999999?text=Olá!+Vi+o+site+e+tenho+interesse+na+Volt+Hyper+Sport" target="_blank" class="btn-whats">
-                        <i class="fab fa-whatsapp"></i> Tenho Interesse
-                    </a>
-                </div>
-            </div>
-
-            <!-- MOTO 2: SCOOTER -->
-            <div class="card-produto">
-                <div class="imagem-container">
-                    <!-- Imagem Ilustrativa de Scooter Elétrica Urbana -->
-                    <img src="https://images.unsplash.com/photo-1568772585407-9361f9bf3a87?q=80&w=600" alt="Scooter Elétrica Volt City">
-                </div>
-                <div class="info-produto">
-                    <h3>Volt City Scooter</h3>
-                    <p class="descricao">A escolha perfeita para fugir do trânsito no dia a dia. Super leve, ágil e muito econômica.</p>
-                    <div class="preco">R$ 11.500,00</div>
-                    <a href="https://wa.me/5511999999999?text=Olá!+Vi+o+site+e+tenho+interesse+na+Volt+City+Scooter" target="_blank" class="btn-whats">
-                        <i class="fab fa-whatsapp"></i> Tenho Interesse
-                    </a>
-                </div>
-            </div>
-
-            <!-- MOTO 3: CHOPPER / CUSTOM -->
-            <div class="card-produto">
-                <div class="imagem-container">
-                    <!-- Imagem Ilustrativa de Moto Elétrica estilo Custom/Cruiser -->
-                    <img src="https://images.unsplash.com/photo-1599819811279-d5ad9cccf838?q=80&w=600" alt="Moto Elétrica Volt Custom">
-                </div>
-                <div class="info-produto">
-                    <h3>Volt Custom Cruiser</h3>
-                    <p class="descricao">Estilo clássico com tecnologia de ponta. Banco confortável, painel 100% digital e motor potente.</p>
-                    <div class="preco">R$ 16.800,00</div>
-                    <a href="https://wa.me/5511999999999?text=Olá!+Vi+o+site+e+tenho+interesse+na+Volt+Custom+Cruiser" target="_blank" class="btn-whats">
-                        <i class="fab fa-whatsapp"></i> Tenho Interesse
-                    </a>
-                </div>
-            </div>
-
-        </div>
-    </section>
-
-    <!-- RODAPÉ -->
-    <footer id="contato">
-        <p>&copy; 2026 E-Volt Motos Elétricas. Todos os direitos reservados.</p>
-        <p>Desenvolvido para lojas de mobilidade elétrica urbana.</p>
-    </footer>
-
-</body>
-</html>
+                    <h3>Zyon E-Scooter</h3>
+                    <span class="tag-modelo">Cor: Vermelha</span>
+                    <p class="descricao">Modelo super prático com cesto frontal de fábrica, enc
