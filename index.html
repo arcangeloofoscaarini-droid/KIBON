@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     
     <style>
-        /* --- ESTILO VISUAL (CSS) --- */
+        /* --- ESTILO VISUAL DA PÁGINA (CSS) --- */
         * {
             margin: 0;
             padding: 0;
@@ -59,7 +59,7 @@
         /* Banner Principal */
         .hero {
             background-color: #14161d;
-            height: 35vh;
+            height: 30vh;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -116,62 +116,39 @@
             margin-bottom: 40px;
         }
 
-        /* Grade de Produtos */
+        /* Grade de Produtos (Ajustada para exibição de texto) */
         .grid-produtos {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
         }
 
-        /* Cards das Motos */
+        /* Cards em formato de ficha técnica */
         .card-produto {
             background-color: #14161d;
             border-radius: 8px;
-            overflow: hidden;
+            padding: 25px;
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
             transition: transform 0.3s, border 0.3s;
             border: 1px solid #222530;
+            text-align: left;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
         }
 
         .card-produto:hover {
-            transform: translateY(-5px);
+            transform: translateY(-3px);
             border: 1px solid #ff3333;
         }
 
-        .imagem-container {
-            width: 100%;
-            height: 320px;
-            overflow: hidden;
-            background-color: #1a1d26;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .imagem-container img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.5s;
-        }
-
-        .card-produto:hover .imagem-container img {
-            transform: scale(1.05);
-        }
-
-        .info-produto {
-            padding: 20px;
-            text-align: left;
-        }
-
         .info-produto h3 {
-            font-size: 20px;
+            font-size: 22px;
             margin-bottom: 8px;
             color: #ffffff;
             text-transform: uppercase;
+            border-bottom: 1px solid #222530;
+            padding-bottom: 8px;
         }
 
         .tag-modelo {
@@ -188,15 +165,17 @@
 
         .descricao {
             color: #a0a5b5;
-            font-size: 13px;
-            line-height: 1.5;
+            font-size: 14px;
+            line-height: 1.6;
             margin-bottom: 20px;
-            height: 60px;
-            overflow: hidden;
         }
 
         .preco-box {
-            margin-bottom: 15px;
+            margin-bottom: 20px;
+            background-color: #0d0e12;
+            padding: 10px;
+            border-radius: 5px;
+            border-left: 3px solid #00ff88;
         }
 
         .preco-de {
@@ -207,7 +186,7 @@
         }
 
         .preco {
-            font-size: 26px;
+            font-size: 28px;
             font-weight: bold;
             color: #00ff88;
         }
@@ -260,14 +239,14 @@
     <section class="hero">
         <div class="hero-content">
             <h2>Motos Elétricas de Alta Qualidade</h2>
-            <p>O estoque mais completo com o melhor preço do mercado.</p>
-            <a href="#catalogo" class="btn-principal">Ver Catálogo</a>
+            <p>Consulte a disponibilidade de cores e modelos com a nossa equipe.</p>
+            <a href="#catalogo" class="btn-principal">Ver Modelos</a>
         </div>
     </section>
 
     <section id="catalogo" class="catalogo-section">
-        <h2>Modelos Disponíveis</h2>
-        <p class="subtitulo">Clique no modelo desejado para falar conosco via WhatsApp</p>
+        <h2>Tabela de Modelos</h2>
+        <p class="subtitulo">Selecione o modelo desejado para consultar o estoque via WhatsApp</p>
 
         <div class="grid-produtos" id="lista-de-motos"></div>
     </section>
@@ -277,56 +256,52 @@
     </footer>
 
     <script>
+        // Altere o número abaixo para o seu WhatsApp (com DDD, somente números)
         const SEU_WHATSAPP = "5511999999999"; 
 
+        // Lista de produtos simplificada apenas com texto e especificações elétricas reais
         const motos = [
             {
-                nome: "Zyon Premium Elétrica",
+                nome: "Zyon Vermelha",
                 categoria: "Moto Elétrica",
-                descricao: "Design futurista e minimalista de alta performance. Motor integrado na roda e bateria de lítio de alta durabilidade.",
-                precoDe: "R$ 5.900,00",
-                precoPor: "R$ 2.999,00",
-                imagem: "https://images.unsplash.com/photo-1615887023516-9b6bcd559e87?w=600&auto=format&fit=crop&q=80"
+                descricao: "Propulsão 100% elétrica por motor Hub traseiro de alta eficiência. Zero emissões, bateria de lítio recarregável e painel digital de instrumentos.",
+                precoDe: "R$ 4.500,00",
+                precoPor: "R$ 2.999,00"
             },
             {
-                nome: "Zyon Cargo Smart",
+                nome: "Zyon Verde Limão",
                 categoria: "Moto Elétrica",
-                descricao: "Ideal para o dia a dia e entregas urbanas rápidos. Painel digital, iluminação em LED e custo zero com gasolina.",
-                precoDe: "R$ 4.900,00",
-                precoPor: "R$ 2.999,00",
-                imagem: "https://images.unsplash.com/photo-1558981806-ec527fa84c39?w=600&auto=format&fit=crop&q=80"
-            },
-            {
-                nome: "Max Scooter E-Classic",
-                categoria: "Scooter Elétrica",
-                descricao: "Scooter inteligente de última geração com assoalho reto, freios regenerativos eletrônicos e zero ruído.",
+                descricao: "Alimentação limpa por energia elétrica com sistema de gerenciamento de bateria inteligente, iluminação Full LED integrada e aceleração silenciosa.",
                 precoDe: "R$ 4.500,00",
-                precoPor: "R$ 2.999,00",
-                imagem: "https://images.unsplash.com/photo-1597848212624-a19eb35e2651?w=600&auto=format&fit=crop&q=80"
+                precoPor: "R$ 2.999,00"
             },
             {
-                nome: "Max E-Sport Urbana",
+                nome: "Max Vermelha",
                 categoria: "Scooter Elétrica",
-                descricao: "Mobilidade limpa com painel tecnológico conectado e design moderno com rodas de liga leve sem corrente.",
-                precoDe: "R$ 4.500,00",
-                precoPor: "R$ 2.999,00",
-                imagem: "https://images.unsplash.com/photo-1622359487440-575038c35b5a?w=600&auto=format&fit=crop&q=80"
+                descricao: "Conceito de mobilidade urbana inteligente. Equipada com freios eletrônicos regenerativos, compartimento de carga sob o assento e assoalho plano.",
+                precoDe: "R$ 3.990,00",
+                precoPor: "R$ 2.999,00"
             },
             {
-                nome: "Max Confort Elétrica",
+                nome: "Max Azul",
                 categoria: "Scooter Elétrica",
-                descricao: "Modelo confortável com assento anatômico e bateria removível que carrega direto em tomadas comuns.",
-                precoDe: "R$ 4.200,00",
-                precoPor: "R$ 2.999,00",
-                imagem: "https://images.unsplash.com/photo-1611016186353-9af58c69a533?w=600&auto=format&fit=crop&q=80"
+                descricao: "Linha urbana sustentável com motorização por indução magnética embutida no cubo. Livre de correntes, óleos ou necessidade de manutenção complexa.",
+                precoDe: "R$ 3.990,00",
+                precoPor: "R$ 2.999,00"
             },
             {
-                nome: "Max Cruiser E-City",
+                nome: "Max Bege",
                 categoria: "Scooter Elétrica",
-                descricao: "Scooter elétrica robusta desenvolvida para longos trajetos na cidade com máxima economia e conforto.",
-                precoDe: "R$ 4.600,00",
-                precoPor: "R$ 2.999,00",
-                imagem: "https://images.unsplash.com/photo-1568772585407-9361f9bf3a87?w=600&auto=format&fit=crop&q=80"
+                descricao: "Conforto e eficiência energética. Conta com bateria removível projetada para carregamento prático direto em qualquer tomada doméstica padrão (110v/220v).",
+                precoDe: "R$ 3.990,00",
+                precoPor: "R$ 2.999,00"
+            },
+            {
+                nome: "Max Cinza Grafite",
+                categoria: "Scooter Elétrica",
+                descricao: "Chassi reforçado otimizado para autonomia em perímetros urbanos. Amortecimento duplo ajustável e tecnologia de controle de torque elétrico.",
+                precoDe: "R$ 3.990,00",
+                precoPor: "R$ 2.999,00"
             }
         ];
 
@@ -335,24 +310,21 @@
             container.innerHTML = ""; 
 
             motos.forEach(moto => {
-                const textoMensagem = encodeURIComponent(`Olá! Vi no site e gostaria de saber mais informações sobre a moto ${moto.nome} que está por ${moto.precoPor}.`);
+                const textoMensagem = encodeURIComponent(`Olá! Gostaria de consultar a disponibilidade no estoque do modelo: ${moto.nome} que está no valor promocional de ${moto.precoPor}.`);
                 const linkWhats = `https://wa.me/${SEU_WHATSAPP}?text=${textoMensagem}`;
 
                 const cardHTML = `
                     <div class="card-produto">
-                        <div class="imagem-container">
-                            <img src="${moto.imagem}" alt="${moto.nome}" onerror="this.src='https://placehold.co/400x320?text=Foto+Indisponível'">
-                        </div>
                         <div class="info-produto">
                             <span class="tag-modelo">${moto.categoria}</span>
                             <h3>${moto.nome}</h3>
                             <p class="descricao">${moto.descricao}</p>
                             <div class="preco-box">
-                                <p class="preco-de">${moto.precoDe}</p>
-                                <p class="preco">${moto.precoPor}</p>
+                                <p class="preco-de">De: ${moto.precoDe}</p>
+                                <p class="preco">Por: ${moto.precoPor}</p>
                             </div>
                             <a href="${linkWhats}" target="_blank" class="btn-whats">
-                                <i class="fab fa-whatsapp"></i> Tenho Interesse
+                                <i class="fab fa-whatsapp"></i> Consultar Estoque
                             </a>
                         </div>
                     </div>
