@@ -1,154 +1,305 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Parceiro Kibon | Download & Cadastro</title>
+    <title>E-Volt Motos Elétricas</title>
+    <!-- Ícones para o botão do WhatsApp -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
     <style>
-        /* Estilização Geral */
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        /* --- ESTILO VISUAL DO SITE (CSS) --- */
+        * {
             margin: 0;
             padding: 0;
-            background-color: #f4f4f4;
-            color: #333;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            scroll-behavior: smooth;
         }
 
+        body {
+            background-color: #121214;
+            color: #ffffff;
+        }
+
+        /* Menu Superior */
         header {
-            background-color: #e2001a; /* Vermelho Kibon */
-            color: white;
-            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 8%;
+            background-color: #1a1a1e;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 2px solid #00ff88;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+
+        .logo span {
+            color: #00ff88;
+        }
+
+        nav a {
+            color: #ffffff;
+            text-decoration: none;
+            margin-left: 20px;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #00ff88;
+        }
+
+        /* Banner Principal */
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(18, 18, 20, 1)), 
+                        url('https://images.unsplash.com/photo-1558981806-ec527fa84c39?q=80&w=1200') no-repeat center center/cover;
+            height: 60vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
             text-align: center;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            padding: 0 20px;
         }
 
-        .container {
-            max-width: 800px;
-            margin: 20px auto;
-            padding: 20px;
-            background: white;
-            border-radius: 8px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        .hero-content h2 {
+            font-size: 45px;
+            margin-bottom: 15px;
+            text-transform: uppercase;
         }
 
-        h2 {
-            color: #e2001a;
-            border-bottom: 2px solid #e2001a;
-            padding-bottom: 10px;
-        }
-
-        /* Seção de Download */
-        .download-box {
-            text-align: center;
-            padding: 30px;
-            background-color: #fff5f5;
-            border: 2px dashed #e2001a;
-            border-radius: 10px;
+        .hero-content p {
+            font-size: 18px;
+            color: #a8a8b3;
             margin-bottom: 30px;
         }
 
-        .btn-download {
-            display: inline-block;
-            background-color: #e2001a;
-            color: white;
-            padding: 15px 30px;
+        .btn-principal {
+            background-color: #00ff88;
+            color: #121214;
+            padding: 12px 30px;
             text-decoration: none;
             font-weight: bold;
-            border-radius: 50px;
-            transition: transform 0.2s, background-color 0.2s;
+            border-radius: 5px;
+            transition: transform 0.2s, background-color 0.3s;
+            display: inline-block;
         }
 
-        .btn-download:hover {
-            background-color: #b30015;
+        .btn-principal:hover {
+            background-color: #00cc6a;
             transform: scale(1.05);
         }
 
-        /* Formulário de Cadastro */
-        form {
+        /* Seção do Catálogo */
+        .catalogo-section {
+            padding: 60px 8%;
+            text-align: center;
+        }
+
+        .catalogo-section h2 {
+            font-size: 36px;
+            margin-bottom: 10px;
+        }
+
+        .subtitulo {
+            color: #a8a8b3;
+            margin-bottom: 40px;
+        }
+
+        /* Grade de Produtos */
+        .grid-produtos {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        /* Cards das Motos */
+        .card-produto {
+            background-color: #1a1a1e;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+            transition: transform 0.3s, border 0.3s;
+            border: 1px solid transparent;
             display: flex;
             flex-direction: column;
+            justify-content: space-between;
         }
 
-        label {
-            margin-top: 15px;
+        .card-produto:hover {
+            transform: translateY(-5px);
+            border: 1px solid #00ff88;
+        }
+
+        .imagem-container {
+            width: 100%;
+            height: 240px;
+            overflow: hidden;
+            background-color: #222;
+        }
+
+        .imagem-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+
+        .card-produto:hover .imagem-container img {
+            transform: scale(1.1);
+        }
+
+        .info-produto {
+            padding: 25px;
+            text-align: left;
+        }
+
+        .info-produto h3 {
+            font-size: 22px;
+            margin-bottom: 10px;
+            color: #ffffff;
+        }
+
+        .descricao {
+            color: #a8a8b3;
+            font-size: 14px;
+            line-height: 1.6;
+            margin-bottom: 20px;
+            height: 70px;
+            overflow: hidden;
+        }
+
+        .preco {
+            font-size: 24px;
             font-weight: bold;
+            color: #00ff88;
+            margin-bottom: 20px;
         }
 
-        input {
-            padding: 12px;
-            margin-top: 5px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            font-size: 16px;
-        }
-
-        button[type="submit"] {
-            margin-top: 25px;
-            background-color: #28a745;
-            color: white;
-            border: none;
-            padding: 15px;
-            font-size: 18px;
-            font-weight: bold;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-
-        button[type="submit"]:hover {
-            background-color: #218838;
-        }
-
-        footer {
+        /* Botão Whatsapp */
+        .btn-whats {
+            display: block;
+            background-color: #25d366;
+            color: #ffffff;
             text-align: center;
-            padding: 20px;
-            font-size: 12px;
-            color: #777;
+            padding: 12px;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .btn-whats:hover {
+            background-color: #20ba5a;
+        }
+
+        .btn-whats i {
+            margin-right: 8px;
+        }
+
+        /* Rodapé */
+        footer {
+            background-color: #1a1a1e;
+            padding: 40px 20px;
+            text-align: center;
+            color: #a8a8b3;
+            font-size: 14px;
+            border-top: 1px solid #29292e;
+            margin-top: 40px;
         }
     </style>
 </head>
 <body>
 
-<header>
-    <h1>Portal do Parceiro</h1>
-    <p>Bem-vindo! Baixe nosso app e faça seu cadastro abaixo.</p>
-</header>
+    <!-- CABEÇALHO -->
+    <header>
+        <div class="logo">E-VOLT <span>MOTOS</span></div>
+        <nav>
+            <a href="#home">Início</a>
+            <a href="#catalogo">Catálogo</a>
+            <a href="#contato">Contato</a>
+        </nav>
+    </header>
 
-<div class="container">
-    
-    <!-- Seção de Download do APK -->
-    <section class="download-box">
-        <h2>Baixe nosso Aplicativo</h2>
-        <p>Tenha todas as ferramentas na palma da sua mão. Clique no botão abaixo para baixar o arquivo APK oficial.</p>
-        <!-- Substitua o '#' pelo link direto do seu arquivo APK -->
-        <a href="https://github.com/arcangeloofoscaarini-droid/KIBON/raw/main/signed%20(1).apk"btn-download">📥 BAIXAR APK AGORA</a>
-        <p style="font-size: 0.8em; margin-top: 10px;">*Certifique-se de permitir a instalação de fontes desconhecidas no Android.</p>
+    <!-- BANNER PRINCIPAL -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h2>O Futuro em Duas Rodas</h2>
+            <p>Motos elétricas de alta performance, economia e zero emissão de carbono.</p>
+            <a href="#catalogo" class="btn-principal">Conhecer Catálogo</a>
+        </div>
     </section>
 
-    <!-- Seção de Cadastro -->
-    <section>
-        <h2>Formulário de Cadastro</h2>
-        <form action="#" method="POST">
-            <label for="nome">Nome Completo:</label>
-            <input type="text" id="nome" name="nome" placeholder="Digite seu nome" required>
+    <!-- CATÁLOGO DE MOTOS -->
+    <section id="catalogo" class="catalogo-section">
+        <h2>Modelos Disponíveis</h2>
+        <p class="subtitulo">Clique no botão para consultar disponibilidade e frete via WhatsApp</p>
 
-            <label for="email">E-mail:</label>
-            <input type="email" id="email" name="email" placeholder="seuemail@exemplo.com" required>
+        <div class="grid-produtos">
+            
+            <!-- MOTO 1: SPORT -->
+            <div class="card-produto">
+                <div class="imagem-container">
+                    <!-- Imagem Ilustrativa de Moto Esportiva Elétrica -->
+                    <img src="https://images.unsplash.com/photo-1614162692292-7ac56d7f7f1e?q=80&w=600" alt="Moto Elétrica Volt Sport">
+                </div>
+                <div class="info-produto">
+                    <h3>Volt Hyper Sport</h3>
+                    <p class="descricao">Visual agressivo e alta performance. Autonomia de até 120km e carregamento rápido em 4 horas.</p>
+                    <div class="preco">R$ 19.900,00</div>
+                    <a href="https://wa.me/5511999999999?text=Olá!+Vi+o+site+e+tenho+interesse+na+Volt+Hyper+Sport" target="_blank" class="btn-whats">
+                        <i class="fab fa-whatsapp"></i> Tenho Interesse
+                    </a>
+                </div>
+            </div>
 
-            <label for="whatsapp">WhatsApp / Telefone:</label>
-            <input type="tel" id="whatsapp" name="whatsapp" placeholder="(00) 00000-0000" required>
+            <!-- MOTO 2: SCOOTER -->
+            <div class="card-produto">
+                <div class="imagem-container">
+                    <!-- Imagem Ilustrativa de Scooter Elétrica Urbana -->
+                    <img src="https://images.unsplash.com/photo-1568772585407-9361f9bf3a87?q=80&w=600" alt="Scooter Elétrica Volt City">
+                </div>
+                <div class="info-produto">
+                    <h3>Volt City Scooter</h3>
+                    <p class="descricao">A escolha perfeita para fugir do trânsito no dia a dia. Super leve, ágil e muito econômica.</p>
+                    <div class="preco">R$ 11.500,00</div>
+                    <a href="https://wa.me/5511999999999?text=Olá!+Vi+o+site+e+tenho+interesse+na+Volt+City+Scooter" target="_blank" class="btn-whats">
+                        <i class="fab fa-whatsapp"></i> Tenho Interesse
+                    </a>
+                </div>
+            </div>
 
-            <label for="cidade">Cidade/Estado:</label>
-            <input type="text" id="cidade" name="cidade" placeholder="Ex: São Paulo - SP" required>
+            <!-- MOTO 3: CHOPPER / CUSTOM -->
+            <div class="card-produto">
+                <div class="imagem-container">
+                    <!-- Imagem Ilustrativa de Moto Elétrica estilo Custom/Cruiser -->
+                    <img src="https://images.unsplash.com/photo-1599819811279-d5ad9cccf838?q=80&w=600" alt="Moto Elétrica Volt Custom">
+                </div>
+                <div class="info-produto">
+                    <h3>Volt Custom Cruiser</h3>
+                    <p class="descricao">Estilo clássico com tecnologia de ponta. Banco confortável, painel 100% digital e motor potente.</p>
+                    <div class="preco">R$ 16.800,00</div>
+                    <a href="https://wa.me/5511999999999?text=Olá!+Vi+o+site+e+tenho+interesse+na+Volt+Custom+Cruiser" target="_blank" class="btn-whats">
+                        <i class="fab fa-whatsapp"></i> Tenho Interesse
+                    </a>
+                </div>
+            </div>
 
-            <button type="submit">FINALIZAR CADASTRO</button>
-        </form>
+        </div>
     </section>
 
-</div>
-
-<footer>
-    &copy; 2026 Portal do Parceiro - Todos os direitos reservados.
-</footer>
+    <!-- RODAPÉ -->
+    <footer id="contato">
+        <p>&copy; 2026 E-Volt Motos Elétricas. Todos os direitos reservados.</p>
+        <p>Desenvolvido para lojas de mobilidade elétrica urbana.</p>
+    </footer>
 
 </body>
 </html>
