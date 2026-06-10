@@ -143,7 +143,7 @@
 
         .imagem-container {
             width: 100%;
-            height: 250px; /* Ajustado para caber melhor fotos de internet/locais */
+            height: 320px;
             overflow: hidden;
             background-color: #1a1d26;
             display: flex;
@@ -269,7 +269,6 @@
         <h2>Modelos Disponíveis</h2>
         <p class="subtitulo">Clique no modelo desejado para falar conosco via WhatsApp</p>
 
-        <!-- AQUI É ONDE O SCRIPT VAI COLOCAR TODAS AS MOTOS AUTOMATICAMENTE -->
         <div class="grid-produtos" id="lista-de-motos"></div>
     </section>
 
@@ -277,55 +276,74 @@
         &copy; 2026 Zyon & Max Motos - Todos os direitos reservados.
     </footer>
 
-    <!-- SCRIPT DE GERENCIAMENTO FÁCIL -->
     <script>
-        // Seu número do WhatsApp (coloque DDD e o número tudo junto, sem traço ou espaço)
+        // Altere apenas o número abaixo para o seu WhatsApp (com DDD e sem espaços)
         const SEU_WHATSAPP = "5511999999999"; 
 
-        // 📝 LISTA DE MOTOS: Para alterar, basta modificar, excluir ou adicionar itens aqui dentro!
+        // Lista de motos com os nomes dos arquivos locais (coloque as fotos na mesma pasta do site)
         const motos = [
             {
-                nome: "Zyon S1",
+                nome: "Zyon Vermelha",
                 categoria: "Moto Elétrica",
-                descricao: "Autonomia de até 60km, motor potente de 2000W e design esportivo perfeito para o dia a dia.",
+                descricao: "Design esportivo de alta performance, 100% elétrica com excelente autonomia urbana.",
                 precoDe: "R$ 15.900,00",
                 precoPor: "R$ 12.900,00",
-                // Você pode usar o link de uma imagem da internet ou o nome do arquivo local (ex: "moto1.jpg")
-                imagem: "https://images.unsplash.com/photo-1558981806-ec527fa84c39?w=500&auto=format&fit=crop&q=60" 
+                imagem: "zyon_vermelha.jpeg"
             },
             {
-                nome: "Max Sport X",
+                nome: "Zyon Verde Limão",
+                categoria: "Moto Elétrica",
+                descricao: "Estilo exclusivo e moderno. Motor potente, ideal para o dia a dia na cidade.",
+                precoDe: "R$ 15.900,00",
+                precoPor: "R$ 12.900,00",
+                imagem: "zyon_verde.jpeg"
+            },
+            {
+                nome: "Max Vermelha",
                 categoria: "Scooter Elétrica",
-                descricao: "Modelo confortável com bateria de lítio removível. Ideal para trajetos urbanos.",
-                precoDe: "R$ 18.500,00",
-                precoPor: "R$ 14.990,00",
-                imagem: "https://images.unsplash.com/photo-1568772585407-9361f9bf3a87?w=500&auto=format&fit=crop&q=60"
+                descricao: "Conforto e praticidade combinados. Perfeita para fugir do trânsito com economia.",
+                precoDe: "R$ 14.500,00",
+                precoPor: "R$ 11.990,00",
+                imagem: "max_vermelha.jpeg"
             },
             {
-                nome: "Zyon Pro Max",
-                categoria: "Alta Performance",
-                descricao: "Velocidade máxima de 90km/h, freios CBS e painel 100% digital em LED.",
-                precoDe: "R$ 24.000,00",
-                precoPor: "R$ 19.800,00",
-                imagem: "https://images.unsplash.com/photo-1599819811279-d5ad9cccf838?w=500&auto=format&fit=crop&q=60"
+                nome: "Max Azul",
+                categoria: "Scooter Elétrica",
+                descricao: "Visual elegante e bateria de longa duração. Prática, ágil e muito econômica.",
+                precoDe: "R$ 14.500,00",
+                precoPor: "R$ 11.990,00",
+                imagem: "max_azul.jpeg"
+            },
+            {
+                nome: "Max Bege",
+                categoria: "Scooter Elétrica",
+                descricao: "Acabamento sofisticado de alta qualidade. Conforto garantido em todos os trajetos.",
+                precoDe: "R$ 14.500,00",
+                precoPor: "R$ 11.990,00",
+                imagem: "max_bege.jpeg"
+            },
+            {
+                nome: "Max Cinza Grafite",
+                categoria: "Scooter Elétrica",
+                descricao: "Estética urbana moderna e robusta. Tecnologia de ponta sobre duas rodas.",
+                precoDe: "R$ 14.500,00",
+                precoPor: "R$ 11.990,00",
+                imagem: "max_cinza.jpeg"
             }
         ];
 
-        // Função que renderiza (mostra) as motos na tela
         function carregarCatalogo() {
             const container = document.getElementById("lista-de-motos");
-            container.innerHTML = ""; // Limpa o container antes de carregar
+            container.innerHTML = ""; 
 
             motos.forEach(moto => {
-                // Cria a mensagem automática que vai para o seu WhatsApp
                 const textoMensagem = encodeURIComponent(`Olá! Vi no site e gostaria de saber mais informações sobre a moto ${moto.nome} que está por ${moto.precoPor}.`);
                 const linkWhats = `https://wa.me/${SEU_WHATSAPP}?text=${textoMensagem}`;
 
-                // Estrutura do card em HTML
                 const cardHTML = `
                     <div class="card-produto">
                         <div class="imagem-container">
-                            <img src="${moto.imagem}" alt="${moto.nome}" onerror="this.src='https://placehold.co/400x300?text=Imagem+Indisponível'">
+                            <img src="${moto.imagem}" alt="${moto.nome}" onerror="this.src='https://placehold.co/400x320?text=Foto+Indisponível'">
                         </div>
                         <div class="info-produto">
                             <span class="tag-modelo">${moto.categoria}</span>
@@ -341,13 +359,10 @@
                         </div>
                     </div>
                 `;
-
-                // Adiciona o card na tela
                 container.innerHTML += cardHTML;
             });
         }
 
-        // Executa a função assim que a página abre
         window.onload = carregarCatalogo;
     </script>
 </body>
