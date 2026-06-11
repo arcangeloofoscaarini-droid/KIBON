@@ -56,6 +56,18 @@
             color: #ff3333;
         }
 
+        .header-endereco {
+            font-size: 13px;
+            color: #a0a5b5;
+            display: flex;
+            align-items: center;
+        }
+
+        .header-endereco i {
+            color: #ff3333;
+            margin-right: 6px;
+        }
+
         nav a {
             color: #a0a5b5;
             text-decoration: none;
@@ -304,6 +316,9 @@
 
     <header>
         <div class="logo">ZYON & MAX <span>MOTOS</span></div>
+        <div class="header-endereco">
+            <i class="fas fa-map-marker-alt"></i> Paracambi - RJ
+        </div>
         <nav>
             <a href="#catalogo">Catálogo</a>
             <a href="#garantia">Segurança e Garantia</a>
@@ -314,7 +329,7 @@
     <section class="hero">
         <div class="hero-content">
             <h2>Catálogo Oficial de Fábrica</h2>
-            <p>Escolha mobilidade inteligente com custo zero de combustível e manutenção simplificada. Atendimento direto e transparente.</p>
+            <p>Escolha mobilidade inteligente com custo zero de combustível e manutenção simplificada. Atendimento direto e transparente de Paracambi para toda a região.</p>
             <div class="selo-entrega">
                 <i class="fas fa-handshake"></i> Pagamento Somente na Entrega
             </div>
@@ -337,18 +352,18 @@
         <div class="grid-suporte">
             <div class="bloco-suporte">
                 <i class="fas fa-truck"></i>
-                <h4>Entrega Garantida</h4>
-                <p>Levamos o veículo até o seu endereço com total comodidade. Você avalia o produto presencialmente antes de realizar qualquer transação.</p>
+                <h4>Entrega e Logística</h4>
+                <p>Nossa base operacional está localizada em Paracambi/RJ. Organizamos o envio seguro do veículo diretamente até o seu endereço com total agilidade regional.</p>
             </div>
             <div class="bloco-suporte">
                 <i class="fas fa-wallet"></i>
                 <h4>Zero Adiantamento</h4>
-                <p>Nossa empresa <strong>NÃO</strong> solicita valores de sinal, taxas de reserva ou PIX antecipados. O pagamento é feito apenas quando a moto estiver com você.</p>
+                <p>Nossa empresa <strong>NÃO</strong> solicita valores de sinal, taxas de reserva ou PIX antecipados. O pagamento é feito apenas quando a moto estiver em suas mãos.</p>
             </div>
             <div class="bloco-suporte">
                 <i class="fas fa-credit-card"></i>
                 <h4>Meios de Pagamento</h4>
-                <p>Aceitamos pagamento via PIX ou Cartões de Crédito diretamente na maquininha com o nosso entregador no momento do recebimento.</p>
+                <p>Aceitamos pagamento via PIX ou Cartões de Crédito diretamente na maquininha com o nosso entregador no momento exato do recebimento do veículo.</p>
             </div>
         </div>
     </section>
@@ -376,16 +391,17 @@
 
     <footer>
         <p>&copy; 2026 Zyon & Max Motos Elétricas - Catálogo Corporativo.</p>
-        <p style="font-size: 11px; color: #444957;">Nota: Este site é um catálogo informativo. Vendas e contratos são validados presencialmente no ato da entrega técnica.</p>
+        <p><i class="fas fa-map-marker-alt"></i> Rua Cel. Othon, Paracambi - RJ, CEP: 26600-000, Brasil.</p>
+        <p style="font-size: 11px; color: #444957; margin-top: 15px;">Nota: Este site é um catálogo informativo. Vendas e contratos são liquidados e validados presencialmente no ato da entrega técnica.</p>
     </footer>
 
     <script>
         // --- CONFIGURAÇÃO DO WHATSAPP CORPORATIVO ---
         // Altere o número abaixo para o seu WhatsApp comercial (coloque DDD e número juntos)
-        const SEU_WHATSAPP = "5588981748458"; 
+        const SEU_WHATSAPP = "5511999999999"; 
 
         // Configura automaticamente os links da seção de suporte
-        document.getElementById("suporte-vendas").href = `https://wa.me/${SEU_WHATSAPP}?text=${encodeURIComponent('Olá! Gostaria de tirar dúvidas sobre o estoque e agendamento de entregas das motos elétricas.')}`;
+        document.getElementById("suporte-vendas").href = `https://wa.me/${SEU_WHATSAPP}?text=${encodeURIComponent('Olá! Gostaria de tirar dúvidas sobre o estoque e agendamento de entregas a partir de Paracambi.')}`;
         document.getElementById("suporte-tecnico").href = `https://wa.me/${SEU_WHATSAPP}?text=${encodeURIComponent('Olá! Preciso de atendimento técnico ou pós-venda relacionado às motos elétricas.')}`;
 
         // Dados estruturados dos modelos elétricos
